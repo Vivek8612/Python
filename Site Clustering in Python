@@ -1,9 +1,13 @@
 ###########################################################################################################################################
 ##########################################                Call required libraries                ##########################################
 ###########################################################################################################################################
+#Call required libraries
 #!/usr/bin/env python
-import time                                                                            # To time processes
+import datetime
+start = datetime.datetime.now()                                                        # To time processes
 
+
+import time                                                                            # To time processes
 import warnings                                                                        # To suppress warnings
 
 import numpy as np                                                                     # Data manipulation
@@ -33,9 +37,49 @@ import sys                                                                      
 
 from sklearn import preprocessing
 
+print("Script run times")
+print("Script execution stared at:", start)
+end = datetime.datetime.now()
+print("Script execution ended at:", end)
+total_time = end - start
+print("Script totally ran for :", total_time)
+
 ###########################################################################################################################################
 ##########################################                      Loading Data                     ##########################################
 ###########################################################################################################################################
+start = datetime.datetime.now()                                                        # To time processes
+
 data = pd.read_csv(r"C:\Users\vivek.kumar8\OneDrive - Shell\NFR Pricing Framework\DE\Site segmentation\DE_Site_Details_with_Competitor_Data_All_Sites_Filtered_Ver01.02.csv", encoding='latin-1')
+
+print("Script run times")
+print("Script execution stared at:", start)
+end = datetime.datetime.now()
+print("Script execution ended at:", end)
+total_time = end - start
+print("Script totally ran for :", total_time)
+
+
+#data = open(r"C:\Users\vivek.kumar8\OneDrive - Shell\NFR Pricing Framework\DE\Site segmentation\DE_Site_Details_with_Competitor_Data_All_Sites_Filtered_Ver01.02.csv")
+#data = csv.reader(data)  
+#print(data)
+
+
+data.head(5)
+
+#print(data.shape)
+#print(data.head)
+#list(data.columns.values)
+
+print("Dimension of dataset: data.shape")
+print(data.shape)
+data.dtypes
+
+
+data_01 = data.iloc[:,0:21].drop_duplicates()
+print(data_01.shape)
+data_01.head(5)
+
+data_01.describe()
+
 
 
