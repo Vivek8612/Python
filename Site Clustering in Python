@@ -1,0 +1,41 @@
+###########################################################################################################################################
+##########################################                Call required libraries                ##########################################
+###########################################################################################################################################
+#!/usr/bin/env python
+import time                                                                            # To time processes
+
+import warnings                                                                        # To suppress warnings
+
+import numpy as np                                                                     # Data manipulation
+import pandas as pd                                                                    # Dataframe manipulatio 
+import pandas_profiling as pdp                                                         # Dataframe profiling 
+
+import matplotlib.pyplot as plt                                                        # For graphics
+from matplotlib import style
+style.use("ggplot")
+colors = ['b', 'orange', 'g', 'r', 'c', 'm', 'y', 'k', 'Brown', 'ForestGreen']
+import seaborn as sns
+sns.set()
+
+import chart_studio.plotly as py                                                       #For World Map
+#import plotly.plotly as py
+import plotly.graph_objs as go
+from plotly.offline import download_plotlyjs, init_notebook_mode, plot, iplot
+init_notebook_mode(connected=True)
+
+from sklearn.preprocessing import StandardScaler                                       #For scaling dataset
+from sklearn.cluster import KMeans, AgglomerativeClustering, AffinityPropagation       #For clustering
+from sklearn.mixture import GaussianMixture                                            #For GMM clustering
+from kmodes.kprototypes import KPrototypes                                             #For K-Prototype Clustering
+
+import os                                                                              # For os related operations
+import sys                                                                             # For data size
+
+from sklearn import preprocessing
+
+###########################################################################################################################################
+##########################################                      Loading Data                     ##########################################
+###########################################################################################################################################
+data = pd.read_csv(r"C:\Users\vivek.kumar8\OneDrive - Shell\NFR Pricing Framework\DE\Site segmentation\DE_Site_Details_with_Competitor_Data_All_Sites_Filtered_Ver01.02.csv", encoding='latin-1')
+
+
